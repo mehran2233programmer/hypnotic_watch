@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="source/animate.css" />
+  </head>
+
+  <style>
+    body {
+      background: #000;
+      /* animation: tim 2s ease infinite alternate; */
+    }
+
+    .container {
+      display: grid;
+      place-content: center;
+      padding-top: 20%;
+    }
+    .time {
+      font-family: fantasy;
+      font-size: 100px;
+
+      color: green;
+      animation: tim 0.001s ease infinite alternate;
+      transition: all 1s;
+    }
+
+    @keyframes tim {
+      0% {
+        color: aliceblue;
+        transform: rotateZ(10deg);
+      }
+      20% {
+        color: green;
+        background: #000;
+        transform: rotateZ(-360deg);
+      }
+      40% {
+        color: red;
+        background: lightblue;
+        transform: rotateZ(360deg);
+      }
+      60% {
+        color: yellow;
+        background: lightslategray;
+        transform: rotateZ(-360deg);
+      }
+      80% {
+        color: violet;
+        background: lightseagreen;
+        transform: rotateZ(360deg);
+      }
+      100% {
+        color: tomato;
+        background: lightyellow;
+        transform: rotateZ(-360deg);
+      }
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div class="time"></div>
+    </div>
+
+    <script>
+      let id = setInterval(t, 1000);
+
+      function t() {
+        let d = new Date();
+        document.getElementsByClassName("time")[0].innerHTML =
+          d.toLocaleTimeString();
+      }
+    </script>
+  </body>
+</html>
